@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const person = {
+            name: 'Germán',
+            lastName: 'Álvarez',
+            birth: new Date(1986, 4, 23),
+            celiac: false,
+            cars: 0,
+            hobbies: ['sky', 'programming', 'beer', 'rave'],
+            address: {
+                street: 'Serrano',
+                number: 100,
+                code: 28002
+            },
+            subscriptions: [
+                {
+                    name: 'Netflix',
+                    cost: 12.99,
+                    period: 30
+                },
+                {
+                    name: 'HBO',
+                    cost: 9.99,
+                    period: 30
+                }
+            ],
+            learn(newHobby) {
+                this.hobbies.push(newHobby)
+                console.log('He aprendido un hobby nuevo:', newHobby)
+                console.log('Ahora mis hobbies son:', this.hobbies)
+            },
+            presentYourself() {
+                console.log(`Me llamo ${this.name} ${this.lastName}`)
+            },
+            buyCars(numberOfCars = 1) {
+                console.log(`Antes tenía ${this.cars} coche/s`)
+                this.cars += numberOfCars
+                console.log(`Ahora tengo ${this.cars} coche/s`)
+            },
+            suscribe(newSubscription) {
+                this.subscriptions.push(newSubscription)
+            }
+        }
+
+
+        // Object extension
+        person.children = 0
+
+        // Access properties (getter)
+        console.log(`La persona se llama ${person.name} ${person.lastName}`)
+        console.log(`Vive en ${person.address.street}, ${person.address.number}`)
+
+        // Access properties (setter)
+        person.cars = 1
+        person['celiac'] = true             // alternative
+        person.subscriptions[0].cost = 14.99
+
+        // Custom methods
+        person.learn('OOP')
+        person.presentYourself()
+        person.buyCars(66)
+
+        const sitepoint = { name: 'Sitepoint', cost: 5.99, period: 30 }
+        person.suscribe(sitepoint)
+
+
+
+
+
+
+        // Extra operations
+
+        // for (let i = 0; i < person.hobbies.length; i++) {
+        //     console.log(person.hobbies[i])
+        // }
+        person.hobbies.forEach(eachHobby => console.log('Me gusta', eachHobby))
+
+        person.subscriptions.forEach(eachSubscription => {
+            console.log(`Estoy suscrito a ${eachSubscription.name}, y pago ${eachSubscription.cost}`)
+        })
+
+
+        // in operator
+        console.log(`¿Tiene la persona propiedad "height"? ${'height' in person}`)
+        console.log(`¿Tiene la persona propiedad "cars"? ${'cars' in person}`)
+
+        // properties iterator
+        const personKeys = Object.keys(person)
+        console.log(`El array de propiedades del objeto es: ${personKeys}`)
+
+        // values iterator
+        const personValues = Object.values(person)
+        personValues.forEach(eachValue => {
+            if (typeof eachValue !== 'function') {
+                console.log('Este es un valor:', eachValue)
+            }
+        })
+
+
+
+
+        console.log('Este es el objeto completo de persona:', person)
+
+
+
+
+
+    </script>
+</body>
+
+</html>

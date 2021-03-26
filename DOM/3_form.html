@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Escribe algo:</h1>
+    <input type="text" class="input-value">
+    <br><br>
+    <button class="showValue">VER VALOR DEL INPUT</button>
+    <p>El valor del input es: <span class="result">?????</span></p>
+
+    <script>
+
+        document.querySelector('.showValue').onclick = () => {
+
+            const inputValue = document.querySelector('.input-value').value
+
+            document.querySelector('.result').textContent = inputValue
+        }
+
+    </script>
+</body>
+
+</html>

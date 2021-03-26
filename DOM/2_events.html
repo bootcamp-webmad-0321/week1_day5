@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Haz click en los botones</h1>
+    <button class="upperbutton">PONER EN MAYÚSCULAS TÍTULO</button>
+    <br>
+    <br>
+    <br>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+    <button class="special">PONER ROJO EL TÍTULO</button>
+
+
+
+    <script>
+
+        // Uppercase title on click
+        const button1 = document.querySelector('.upperbutton')
+
+        button1.onclick = () => {
+            document.querySelector('h1').style.textTransform = 'uppercase'
+        }
+
+
+
+
+        // Color title on any button click
+        const buttons = document.querySelectorAll('.special')
+
+        buttons.forEach(eachButton => {
+
+            eachButton.onclick = () => {
+                document.querySelector('h1').style.color = 'red'
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

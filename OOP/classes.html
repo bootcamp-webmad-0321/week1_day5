@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class Person {
+
+            constructor(nameValue, lastNameValue, ageValue, jobValue, salaryValue, heightValue, hobbiesValue) {
+                this.name = nameValue
+                this.lastName = lastNameValue
+                this.age = ageValue
+                this.job = jobValue
+                this.salary = salaryValue
+                this.height = heightValue
+                this.hobbies = hobbiesValue
+                this.alive = true
+            }
+
+            grow() {
+                this.age++
+            }
+
+            getJob() {
+                this.job = true
+            }
+
+            newSalary(salary) {
+                this.salary = salary
+            }
+
+            learn(newHobby) {
+                this.hobbies.push(newHobby)
+            }
+        }
+
+        const person1 = new Person('German', 'Alvarez', 33, false, 0, 182, ['beer', 'sky'])
+        const person2 = new Person('Nat', 'Canales', 33, true, 18000, 185, ['hbo', 'party'])
+
+        console.log(`Me llamo ${person2.name} ${person2.lastName}`)
+
+        person1.grow()
+        person1.getJob()
+        person1.newSalary(19000)
+        person1.learn('chess')
+
+        console.log('Esta instancia es un objeto:', person1)
+
+    </script>
+</body>
+
+</html>
